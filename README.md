@@ -16,7 +16,7 @@ A discord bot for educational purposes, a collective project from HHS students.
     - `python -m pipenv --version` -> possible output: `pipenv, version 2022.11.25`
 
 
-## Setup project
+## Setup project for official collaborators?
 1. Download or clone the main branch to a local folder named `volk_bot` by doing: `git clone https://github.com/joren-dev/VolkBot.git`
 2. Open terminal inside project.
 3. Create local pipenv: `pipenv install`.
@@ -25,6 +25,15 @@ A discord bot for educational purposes, a collective project from HHS students.
 6. On windows navigate to: `C:\Users\xxxx\.virtualenvs\` and find the `volk_bot-xxxxxxxx` folder.
 7. Select the `volk_bot\Scripts\python.exe` as interpreter.
  
+## How to fork the project for contributor?
+1. Press fork on the top right of the screen
+2. Create a forked repository of VolkBot
+3. Follow the steps from official collaborators, but clone the forked repository instead.
+4. Create a branch for your feature, using: `git checkout -b feature_name`
+5. Start writing code in that branch
+
+## How to Pull Request my code?
+_coming soon_
 
  ## Common dev-commands explained
  This codebase has various commands a developer might want to use when contributing to this project. All the
