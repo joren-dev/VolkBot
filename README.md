@@ -6,14 +6,14 @@ A discord bot for educational purposes, a collective project from HHS students.
 	- Include [Python PIP](https://pip.pypa.io/en/stable/installation/) in installation
 	- Mark the 'Add python.exe to PATH' checkbox.
 
-Open operation system's terminal and run the following commands to double-check if all requirements are available:
-- `python --version` -> possible output: `Python 3.11.0`
-- `python -m pip --version` -> possible output: `pip 22.3.1`
+2. Open operation system's terminal and run the following commands to double-check if all requirements are available:
+    - `python --version` -> possible output: `Python 3.11.0`
+    - `python -m pip --version` -> possible output: `pip 22.3.1`
 
-2. Install [Pipenv](https://github.com/pypa/pipenv#installation) by running command: `pip install --user pipenv`
+3. Install [Pipenv](https://github.com/pypa/pipenv#installation) by running command: `pip install --user pipenv`
 
-Check if it installed by running the following command:
-- `python -m pipenv --version` -> possible output: `pipenv, version 2022.11.25`
+4. Check if it installed by running the following command:
+    - `python -m pipenv --version` -> possible output: `pipenv, version 2022.11.25`
 
 
 ## Setup project
