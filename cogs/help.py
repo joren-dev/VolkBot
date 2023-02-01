@@ -10,7 +10,6 @@ class help(commands.Cog):
     async def help(self, ctx):
         # TODO: get rid of colour hex codes, in code.
         embed = (discord.Embed(description="help command hier", color=0xFF0000),)
-        embed.set_author(name="Uitleg planles command")
 
         await ctx.send(embed=embed)
 
