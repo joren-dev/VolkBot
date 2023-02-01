@@ -1,8 +1,10 @@
 import os
 import discord
+import asyncio
+from discord.ext import commands
 
 
-class Client(discord.Client):
+class Client(commands.Bot):
     async def on_ready(self):
         print(f"Logged on as {self.user}!")
 
@@ -13,11 +15,15 @@ class Client(discord.Client):
 intents = discord.Intents.default()
 intents.message_content = True
 
-client = Client(intents=intents)
+client = Client(command_prefix="!", intents=intents)
 
+async def load_cogs():
+    for filename in os.listdir("./cogs"):
+        if filename.endswith(".py"):
+            client.load_extension(f"cogs.{filename[:-3]}")
 
-for filename in os.listdir("./cogs"):
-    if filename.endswith(".py"):
-        client.load_extension(f"cogs.{filename[:-3]}")
+async def main():
+    await load_cogs()
+    await client.start("my token goes here")
 
-client.run("my token goes here")
+asyncio.run(main())
