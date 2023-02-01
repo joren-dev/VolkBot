@@ -1,3 +1,4 @@
+import os
 import discord
 
 
@@ -13,4 +14,10 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = Client(intents=intents)
+
+
+for filename in os.listdir("./cogs"):
+    if filename.endswith(".py"):
+        client.load_extension(f"cogs.{filename[:-3]}")
+
 client.run("my token goes here")
