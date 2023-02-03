@@ -1,7 +1,7 @@
 import os
 
 
-class CogManager:
+class _CogSystemManager:
     def __init__(self, client):
         self.client = client
 
@@ -16,3 +16,7 @@ class CogManager:
         for filename in os.listdir("./src/cogs"):
             if filename.endswith(".py"):
                 await self.client.load_extension(f"src.cogs.{filename[:-3]}")
+
+
+# Typedef for clarity, make sure to import CogSystem
+CogSystem = _CogSystemManager

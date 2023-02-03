@@ -3,7 +3,8 @@ import discord
 import asyncio
 
 from dotenv import load_dotenv
-from src.managers.cog_system import CogManager
+
+from src.managers.cog_system import CogSystem
 from src.managers.discord_client import DiscordClient
 
 
@@ -15,7 +16,7 @@ client = DiscordClient(command_prefix="!", intents=intents, help_command=None)
 
 
 async def main():
-    cog_system = CogManager(client)
+    cog_system = CogSystem(client)
     await cog_system.reg_cogs()
 
     load_dotenv()
