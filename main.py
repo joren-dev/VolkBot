@@ -2,23 +2,26 @@ import os
 import discord
 import asyncio
 from discord.ext import commands
+from dotenv import load_dotenv
 
 
 class Client(commands.Bot):
     async def on_ready(self):
         print(f"Logged on as {self.user}!")
-    
+
     async def on_message(self, message):
         # Ensures commands work properly, wont process any commands without it.
         await self.process_commands(message)
 
         print(f"Message from {message.author}: {message.content}")
 
+
 # New python API update requires these
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = Client(command_prefix="!", intents=intents, help_command=None)
+
 
 async def load_cogs():
     # TODO: Ensure this is only loaded in debug mode, not in live
@@ -29,8 +32,17 @@ async def load_cogs():
         if filename.endswith(".py"):
             await client.load_extension(f"cogs.{filename[:-3]}")
 
+
 async def main():
     await load_cogs()
-    await client.start("my token goes here")
+
+    load_dotenv()
+    token = os.getenv("TOKEN")
+    if token is None:
+        print("No token was provided in .env, shutting down...")
+        exit(1)
+
+    await client.start(token)
+
 
 asyncio.run(main())

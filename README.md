@@ -45,3 +45,9 @@ This is how you use pip inside pipenv, dont forget the `run`.
 
 - `pipenv run black "../volk_bot"`
 Same goes for black formatter, ensure you are inside the "\volk_bot\" directory or adapt the relative path accordingly
+
+## Environment file
+The .env file contains parameters for the local install that will not be committed like the discord API token or channel ids. You can take a look at [[file:.env.example]].
+```
+TOKEN=ADDYOURTOKENHERE
+```
