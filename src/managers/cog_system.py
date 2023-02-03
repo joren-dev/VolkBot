@@ -11,7 +11,7 @@ class _CogSystemManager:
 
     async def reg_cogs(self):
         # TODO: Ensure this is only loaded in debug mode, not in live
-        self.reg_debug_cogs()
+        await self.reg_debug_cogs()
 
         for filename in os.listdir("./src/cogs"):
             if filename.endswith(".py"):
