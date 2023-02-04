@@ -9,5 +9,5 @@ async def main():
     # Get token from .env and start up bot accordingly
     await client.start(get_env_token("TOKEN"))
 
-
-asyncio.run(main())
+if __name__ == '__main__':
+    asyncio.run(main())
