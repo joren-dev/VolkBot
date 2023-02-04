@@ -4,8 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+"discord.py" = "==2.1.0"
+python-dotenv = "*"
 
 [dev-packages]
+black = "*"
 
 [requires]
 python_version = "3.11"
