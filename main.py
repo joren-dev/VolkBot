@@ -3,7 +3,7 @@ import discord
 
 from src.globals.client_instance import DiscordClient
 
-# Setup bot and initialise singleton
+# Initialise singleton with bot instance
 intents = discord.Intents.default()
 intents.message_content = True
 DiscordClient(command_prefix="!", intents=intents, help_command=None)
