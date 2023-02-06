@@ -1,7 +1,10 @@
 from discord.ext import commands
 
+from src.utils.singleton import Singleton
 
-class _DiscordClientManager(commands.Bot):
+
+# Warning: Unless you have a very good reason to use this class, please do not touch it.
+class EventManager(commands.Bot, metaclass=Singleton):
     async def on_ready(self):
         print(f"Logged on as {self.user}!")
 
@@ -10,7 +13,3 @@ class _DiscordClientManager(commands.Bot):
         await self.process_commands(message)
 
         print(f"Message from {message.author}: {message.content}")
-
-
-# Typedef for clarity, make sure to import DiscordClient
-DiscordClient = _DiscordClientManager
