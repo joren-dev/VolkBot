@@ -1,15 +1,9 @@
-from discord.ext import commands
+# Initialises all default events
+from src.events.default_events import *
 
-from src.utils.singleton import Singleton
 
-
-# Warning: Unless you have a very good reason to use this class, please do not touch it.
-class EventManager(commands.Bot, metaclass=Singleton):
-    async def on_ready(self):
-        print(f"Logged on as {self.user}!")
-
-    async def on_message(self, message):
-        # Ensures commands work properly, wont process any commands without it.
-        await self.process_commands(message)
-
-        print(f"Message from {message.author}: {message.content}")
+# Manages the events
+class EventManager:
+    def __init__(self):
+        # Reg events here if theres no better way...
+        pass
