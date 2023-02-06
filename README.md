@@ -33,7 +33,7 @@ Same goes for black formatter, ensure you are inside the "\volk_bot\" directory 
 
 
 ## Environment file
-The .env file contains parameters for the local install that will not be committed like the discord API token or channel ids. You can take a look at [[file:.env.example]].
+The .env file contains parameters for the local install that will not be committed like the discord API token or channel ids. You can take a look at [.env.example](.env.example).
 ```
 TOKEN=ADDYOURTOKENHERE
 ```
