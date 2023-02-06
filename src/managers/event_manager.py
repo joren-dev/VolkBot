@@ -1,5 +1,5 @@
 # Initialises all default events
-from src.events.default_events import *
+from src.events.detail.default_events import *
 
 
 # Manages the events
