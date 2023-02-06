@@ -9,13 +9,12 @@ intents.message_content = True
 DiscordClient(command_prefix="!", intents=intents, help_command=None)
 
 
-# Imported after to ensure DiscordClient() isnt called before initial initialization.
-from src.utils.small_utility import get_env_token
-from src.managers.event_manager import EventManager
-from src.managers.cog_system import CogSystem
-
-
 async def main():
+    # Imported after to ensure DiscordClient() isnt called before initial initialization.
+    from src.utils.small_utility import get_env_token
+    from src.managers.event_manager import EventManager
+    from src.managers.cog_system import CogSystem
+
     # Initialise event manager
     EventManager()
 
