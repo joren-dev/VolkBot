@@ -6,12 +6,18 @@ _discord_client = DiscordClient()
 
 @_discord_client.event
 async def on_ready():
-    print(f"Logged on as {_discord_client.user}!")
+    from src.managers.event_manager import EventManager
+
+    for each in EventManager.on_ready_events:
+        await each.on_ready()
 
 
 @_discord_client.event
 async def on_message(message):
-    print(f"Message lol {message.author}: {message.content}")
-
     # Ensures commands work properly, wont process any commands without it.
     await _discord_client.process_commands(message)
+
+    from src.managers.event_manager import EventManager
+
+    for each in EventManager.on_message_events:
+        await each.on_message(message)

@@ -1,8 +1,15 @@
 from abc import ABCMeta, abstractmethod
 
 
-class AbstractEventBase(metaclass=ABCMeta):
+class OnReadyEvent(metaclass=ABCMeta):
     @property
     @abstractmethod
-    def on_event(self):
+    def on_ready(self):
+        pass
+
+
+class OnMessageEvent(metaclass=ABCMeta):
+    @property
+    @abstractmethod
+    def on_message(self, message):
         pass
