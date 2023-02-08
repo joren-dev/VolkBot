@@ -3,6 +3,14 @@ from src.globals.client_instance import DiscordClient
 
 
 class LanguageFilter(OnMessageEvent):
+    # TODO: Ship them in a file, and create the ability to add/remove words runtime.
+    kBadWordsList = ["kanker", "flikker", "can3cer"]
+
     async def on_message(self, message) -> None:
-        if message.content == "kanker":
-            await message.channel.send("Doe is rustig broertje.")
+        for bad_word in self.kBadWordsList:
+            if bad_word in message.content.lower():
+                await message.delete()
+                await message.channel.send(
+                    f"Hey {message.author.mention}, keep it civil blud."
+                )
+                break
